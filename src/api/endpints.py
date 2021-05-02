@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify, Response
+import requests
 
 app = Flask(__name__)
-
 
 # endpoint to validate the server
 @app.route("/")
@@ -16,9 +16,21 @@ def check():
         return jsonify(isError=False, message="Success", statusCode=200), 200
     elif request.method == 'POST':
         data = request.json
-        return jsonify(isError=False, message=data, statusCode=200), 200
+        print(data)
+        # Thewnis Code here
+        contractType = 'revenue'
+        if contractType == "lease":
+            var = requests.get('http://0.0.0.0:5000/lease')
+            print(var.text)
+            return jsonify(isError=False, message="Reciver", statusCode=200), 200
+        elif contractType == "revenue":
+            var = requests.get('http://0.0.0.0:5000/revenue')
+            print(var.text)
+            return jsonify(isError=False, message="Reciver", statusCode=200), 200
+        else:
+            return jsonify(isError=True, message="Unable to determine Contract typedata", statusCode=501), 501
     else:
-        return jsonify(isError=True, message="Unauthorized method", statusCode=401), 401
+        return jsonify(isError=True, message="Unauthorized method", statusCode=405), 405
 
 
 # endpoint to Lease Recognition capabilities
@@ -42,4 +54,4 @@ def revenue():
         data = request.json
         return jsonify(isError=False, message=data, statusCode=200), 200
     else:
-        return jsonify(isError=True, message="Unauthorized method", statusCode=401), 401
+        return jsonify(isError=True, message="Unauthorized method", statusCode=405), 405
