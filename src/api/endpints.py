@@ -67,7 +67,11 @@ def revenuepdf():
         if 'pdf' in request.files:
             incoming_pdf = request.files['pdf']
             pdf_data = PdfFileReader(incoming_pdf, 'rb')
-            print(pdf_data.getFormTextFields())
+            page = pdf_data.getPage(0)
+            pageContent = page.extractText()
+            print(pageContent)
+            print(incoming_pdf)
+            print(page)
         return jsonify(isError=False, message="data", statusCode=200), 200
     else:
         return jsonify(isError=True, message="Unauthorized method", statusCode=405), 405
