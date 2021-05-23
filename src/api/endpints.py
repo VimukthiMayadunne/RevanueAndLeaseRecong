@@ -1,7 +1,9 @@
-from flask import Flask, request, jsonify, Response
+from PyPDF2 import PdfFileReader
 import requests
+from flask import Flask, request, jsonify
 
 app = Flask(__name__)
+
 
 # endpoint to validate the server
 @app.route("/")
@@ -53,5 +55,19 @@ def revenue():
     elif request.method == 'POST':
         data = request.json
         return jsonify(isError=False, message=data, statusCode=200), 200
+    else:
+        return jsonify(isError=True, message="Unauthorized method", statusCode=405), 405
+
+
+@app.route("/revenuepdf", methods=['GET', 'POST'])
+def revenuepdf():
+    if request.method == 'GET':
+        return jsonify(isError=False, message="Success", statusCode=200), 200
+    elif request.method == 'POST':
+        if 'pdf' in request.files:
+            incoming_pdf = request.files['pdf']
+            pdf_data = PdfFileReader(incoming_pdf, 'rb')
+            print(pdf_data.getFormTextFields())
+        return jsonify(isError=False, message="data", statusCode=200), 200
     else:
         return jsonify(isError=True, message="Unauthorized method", statusCode=405), 405
