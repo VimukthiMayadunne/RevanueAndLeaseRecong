@@ -1,5 +1,9 @@
 extracted_data = {"contractor": "",
-        "contractee": "",
-        "duration": "",
-        "intervalPa": "",
-        "interval": ""}
+                  "contractee": "",
+                  "duration": None,
+                  "intervalPayment": None,
+                  "interval": None,
+                  "amount": None,
+                  "numberOfPerformanceObligations": 0,
+                  "poi": []
+                  }

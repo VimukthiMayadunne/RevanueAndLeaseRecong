@@ -1,9 +1,10 @@
 from spacy.matcher import Matcher
 
-pattern_buyer = [[{'LOWER': 'buyer'}, {'LOWER': 'details'}, {'IS_PUNCT': True}],
+pattern_buyer = [[{'LOWER': 'site'}, {'LOWER': 'name'}, {'IS_PUNCT': True}],
                  [{'LOWER': 'buyer'}, {'LOWER': 'details'}]]
 pattern_seller = [[{'LOWER': 'seller'}, {'LOWER': 'details'}, {'IS_PUNCT': True}],
-                  [{'LOWER': 'seller'}, {'LOWER': 'details'}]]
+                  [{'LOWER': 'seller'}, {'LOWER': 'details'}],[{'LOWER': 'sub'},
+                {'IS_PUNCT': True},{'LOWER': 'contractor'}]]
 pattern_person = [{"label": "PERSON", "pattern": [{'IS_TITLE': True}]}]
 
 
@@ -15,14 +16,21 @@ def findContractor(nlp, doc, ruler):
     matches = matcher(doc)
     for match_id, start, end in matches:
         string_id = nlp.vocab.strings[match_id]  # Get string representation
-        token_window = doc[end + 1:end + 18]
+        token_window = doc[end :end + 8]
+        print(token_window.text)
+        span = doc[start:end]  # The matched span
+        print(match_id, string_id, start, end, span.text)
         for ent in token_window.ents:
-            if ent.label == 380 and string_id == 'buyer':
+            print("----------")
+            print(ent)
+            print("------")
+            if (ent.label == 380 or ent.label == 383) and string_id == 'buyer':
+                print("string matched")
                 contractor = ent.text
                 return contractor
             else:
-                return None
-
+                return "Contractor"
+    return "ContractorName"
 
 def findContractee(nlp, doc, ruler):
     matcher = Matcher(nlp.vocab)
@@ -33,7 +41,7 @@ def findContractee(nlp, doc, ruler):
         string_id = nlp.vocab.strings[match_id]  # Get string representation
         token_window = doc[end + 1:end + 18]
         for ent in token_window.ents:
-            if ent.label == 380 and string_id == 'seller':
+            if (ent.label == 380 or ent.label == 383) and string_id == 'seller':
                 contractee = ent.text
                 return contractee
             else:

@@ -1,0 +1,69 @@
+CONTRACT FOR SELLING A CAR. 
+
+    BUYER Details:
+        Name: Dr. Myrtle Mraz,
+        Address:  81, PEPILIYANA ROAD, Nedimaladehiwala.
+        Phone Number: 1-200-959-8842
+    SELLER Details ; 
+    	Name: Tharindu Perera,
+    	Address: 181 Panchikawatta Road,  Colombo-10.
+	    Phone Number:  0766723300 ,
+
+VEHICLE DETAILS: 
+Upon the receipt of payment in full, the Seller agrees to transfer to the Buyer ownership 
+(registration and/or title) of the following motor vehicle:
+    Make  of Vehicle: Toyota,
+    Model of Vehicle: Allion,
+    Year of Vehicle:  2007, 
+    Engine Capacity: 1500, 
+
+MILEAGE: 
+To the Seller's best knowledge, the current mileage is accurate and correct. 
+    Odometer reading on (2020 Oct 10 12:24 am): 151000.
+
+PAYMENT INFORMATION: 
+    Purchase Price of Vehicle:  Rs.5,800,000/=
+    Date of Transaction: Fri Oct 09 2020 13:19:08 GMT+0530 (India Standard Time)
+The Buyer will pay the Seller the purchase price in full by cash, guaranteed check, money order, 
+or other method of payment agreed upon by both parties. (Specify if not listed above)__________.
+
+HOLDING DEPOSIT: 
+The Seller acknowledges that a holding deposit of Rs.1800,000/= (amount) was received from
+the Buyer on Sat Oct 10 2020 01:01:52 GMT+0530 (India Standard Time) (date).The Buyer will pay the remaining balance in the sum of 50000(amount) 
+by  Fri Oct 09 2020 13:19:08 GMT+0530 (India Standard Time) (date).
+
+Both parties agree that should the Buyer fail to pay the remaining balance of the agreed upon 
+purchase price by the specified date, the Buyer will have no further claims or rights to the 
+above mentioned vehicle unless otherwise indicated by the Seller. If payment is not received 
+by the agreed upon date, the Seller will have no further obligations and the terms of this 
+agreement will be null and void.   
+
+SELLER'S RESPONSIBILITES: 
+On the date of sale,
+the Seller promises to provide the Buyer with the vehicle.
+    title: Toytoa Alloin
+    registration: WP KX-4567,
+    odometer reading: 85697 (or odometer disclosure statement where applicable),
+and any other pertinentdocuments or agreed upon paperwork (specify) _________________________
+“The Buyer acknowledges that all the above mentioned paperwork and/or documentation was received from the Seller.
+Yes/No.” “AS IS”
+
+DISCLAIMER: 
+Both parties acknowledge that the above mentioned vehicle is sold as seen, that the buyer has 
+tried and inspected the vehicle to his/her satisfaction and has approved the purchase with the
+understanding that the vehicle is sold “AS IS” without warranties or guarantees, either 
+expressed or implied.   
+The Buyer accepts full responsibility for any repairs incurred following ____________________ (date of sale),
+as well as any costs related to vehicle registration, safety certification, or transfer of ownership. 
+All risks and responsibilities pass to the Buyer once payment is made in full and the Buyer takes possession
+of the vehicle.
+
+SIGNATURES: 
+Both parties agree to the terms specified above and signify the completion of this transaction
+by their signatures.
+
+Buyer's Signature ____________________    
+Date _______________________
+
+Seller's Signature _____________________ 
+Date ________________ 
