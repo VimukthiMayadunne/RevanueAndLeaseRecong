@@ -27,10 +27,6 @@ PAYMENT INFORMATION:
 The Buyer will pay the Seller the purchase price in full by cash, guaranteed check, money order, 
 or other method of payment agreed upon by both parties. (Specify if not listed above)__________.
 
-HOLDING DEPOSIT: 
-The Seller acknowledges that a holding deposit of Rs.1800,000/= (amount) was received from
-the Buyer on Sat Oct 10 2020 01:01:52 GMT+0530 (India Standard Time) (date).The Buyer will pay the remaining balance in the sum of 50000(amount) 
-by  Fri Oct 09 2020 13:19:08 GMT+0530 (India Standard Time) (date).
 
 Both parties agree that should the Buyer fail to pay the remaining balance of the agreed upon 
 purchase price by the specified date, the Buyer will have no further claims or rights to the 

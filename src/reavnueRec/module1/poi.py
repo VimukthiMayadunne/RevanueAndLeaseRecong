@@ -15,7 +15,9 @@ tagTypes = [15794550382381185553, 13927759927860985106, 14200088355797579614, 15
 # SELLER'S RESPONSIBILITES:
 pattern_res = [[{'LOWER': 'seller'},
                 {'ORTH': "'S"},
-                {'LOWER': 'responsibilites'}]]
+                {'LOWER': 'responsibilites'}],[{'LOWER': 'seller'},
+                {'ORTH': "'S"},
+                {'LOWER': 'responsibilities'}]]
 
 
 def find_poi(nlp, doc, ruler, extracted_data):
@@ -24,9 +26,11 @@ def find_poi(nlp, doc, ruler, extracted_data):
     matcher = Matcher(nlp.vocab)
     matcher.add("buyer", pattern_res)
     matches = matcher(doc)
+    print(len(matches))
     for match_id, start, end in matches:
         token_window = doc[end + 1:end + 55]
         newDoc = token_window.text
+        print(newDoc)
         newNlp = nlp(newDoc)
         spans = list(newNlp.sents)
         for sen in spans:
@@ -41,12 +45,18 @@ def find_poi(nlp, doc, ruler, extracted_data):
             if doc_simlirity >= 0.8 and temp_count >= 4:
                 extracted_data['numberOfPerformanceObligations'] += 1
                 if extracted_data["single_day"]:
-                    tempt = {"name": temp_nlp[-3:-1].text,
+                    tempt = {"Name": temp_nlp[-3:-1].text,
                              "StandAlonePrice": extracted_data["amount"],
                              "Recurent": False,
                              "whenToPerform": 0
                              }
-                    print(tempt)
-                    extracted_data['poi'].append(tempt)
-                    print(extracted_data['poi'])
+                else:
+                    tempt = {"Name": temp_nlp[-3:-1].text,
+                             "StandAlonePrice": extracted_data["amount"],
+                             "Recurent": False,
+                             "whenToPerform": extracted_data['duration']
+                             }
+                print(tempt)
+                extracted_data['poi'].append(tempt)
+                print(extracted_data['poi'])
     return extracted_data

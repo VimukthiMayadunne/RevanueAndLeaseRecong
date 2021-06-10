@@ -1,16 +1,18 @@
 from spacy.matcher import Matcher
 import re
 
-pattern_amount = [{'LOWER': 'total'},
+pattern_amount = [[{'LOWER': 'total'},
                   {'LOWER': 'contract'},
-                  {'LOWER': 'price'}]
+                  {'LOWER': 'price'}],[{'LOWER': 'total'},
+                  {'LOWER': 'installation'},
+                  {'LOWER': 'charges'}]]
 
 regex = r"(?:Rs\.?|INR)\s*(\d+(?:[.,]\d+)*)|(\d+(?:[.,]\d+)*)\s*(?:Rs\.?|INR)"
 
 
 def findAmount(nlp, doc, ruler):
     matcher = Matcher(nlp.vocab)
-    matcher.add("amount", [pattern_amount])
+    matcher.add("amount", pattern_amount)
     matches = matcher(doc)
     for match_id, start, end in matches:
         token_window = doc[end :end + 6]

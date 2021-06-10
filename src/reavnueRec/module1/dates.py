@@ -22,16 +22,17 @@ def find_dates(nlp, doc, ruler, extracted_data):
         extracted_data['intervalPayment'] = False
         extracted_data['interval'] = 1
         extracted_data['duration'] = 1
+        extracted_data['single_day'] = True
         for match_id, start, end in matches:
             string_id = nlp.vocab.strings[match_id]
             token_window = doc[end + 1:end + 22]
             for ent in token_window.ents:
                 if ent.label == 391 and string_id == 'amount':
                     extracted_data['transDate'] = ent.text
-                    extracted_data['single_day'] = True
         return extracted_data
     else:
         extracted_data['intervalPayment'] = True
         extracted_data['interval'] = 1
         extracted_data['duration'] = 12
+        extracted_data['single_day'] = False
         return extracted_data
